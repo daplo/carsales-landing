@@ -1,0 +1,223 @@
+$color-grey-light: #f9f9f9;
+$border-radius: 0;
+
+
+html,
+body,
+#main,
+#page {
+    margin: 0;
+    padding: 0;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+h3 {
+    font-weight: 400;
+}
+
+.btn {
+    border-radius: $border-radius;
+    @extend .box-shadow;
+}
+
+.background-image {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.text-shadow {
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, .9);
+}
+
+.box-shadow {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .1);
+}
+
+.overlay {
+    position: relative;
+    z-index: 0;
+
+    &:after {
+        background-color: rgba(0, 0, 0, .6);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        content: '';
+    }
+}
+
+
+.header {
+    @extend .background-image;
+    height: 80vh;
+    background-color: $color-grey-light;
+    background-image: url(../img/header.jfif);
+
+    h1 {
+        @extend .text-shadow;
+        font-weight: bold;
+        font-size: 4rem;
+        color: #fff;
+        margin: 0;
+        line-height: 4rem;
+
+        span {
+            font-weight: 400;
+            display: block;
+        }
+    }
+}
+
+
+section {
+    margin: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+
+    &:first-child {
+        background-color: $color-grey-light
+    }
+
+    &:last-child {
+        margin-bottom: 0
+    }
+}
+
+.image {
+    @extend .background-image;
+    @extend .overlay;
+    text-align: center;
+
+    .image-bg {
+        z-index: 3;
+    }
+
+    &.image-first-row {
+        background-image: url(../img/1.jfif);
+    }
+
+    &.image-second-row {
+        background-image: url(../img/2.jfif);
+    }
+
+    h3 {
+        @extend .text-shadow;
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        z-index: 2;
+    }
+
+    ;
+}
+
+.copy,
+.image {
+    padding: 4rem;
+
+}
+
+.carsalesFromWrapper {
+    background-color: #fff;
+    padding: 2rem;
+    @extend .box-shadow;
+}
+
+.contact {
+
+    padding: 4rem;
+    background-color: #f9f9f9;
+}
+
+
+@media screen and (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1600px;
+    }
+}
+
+.form-control {
+    border-radius: $border-radius;
+
+    &.error {
+        border-color: darkred;
+    }
+}
+
+.error {
+    color: darkred
+}
+
+//mobile 
+
+@media screen and (max-width:991.999px) {
+
+    h1 {
+        font-size: 2rem
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .header {
+        background-position:  80% 40%;
+        min-height: 600px;
+
+        h1 {
+            margin-bottom: 60%;
+            font-size: 3rem;
+            line-height: 3.5rem;
+        }
+    }
+
+    section {
+        margin: 0;
+        padding: 2rem 0;
+        
+        &:first-child {
+            background-color:#fff;
+            padding-top: 0;
+        }
+    
+    }
+    .copy {
+        padding: 2rem;
+    }
+    .contact {
+        padding: 2rem 0;
+    }
+    .image {
+        order : -1
+    }
+}
