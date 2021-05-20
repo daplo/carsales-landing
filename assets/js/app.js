@@ -14,6 +14,6 @@ $(document).ready(function () {
     });
 
     $(".btn-outline-primary").on("click", ()=> {
-        $("#page .content").toggleClass("container-fluid").toggleClass("container")
+        $("#page .content").toggleClass("container")
     });
 });
